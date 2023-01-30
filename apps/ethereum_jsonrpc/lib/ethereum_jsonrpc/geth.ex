@@ -231,10 +231,10 @@ defmodule EthereumJSONRPC.Geth do
 
   defp parse_call_tracer_calls(calls, acc, trace_address, inner? \\ true)
   defp parse_call_tracer_calls([], acc, _trace_address, _inner?), do: acc
-  defp parse_call_tracer_calls({%{"type" => 0}, _}, acc, _trace_address, _inner?), do: acc
+  defp parse_call_tracer_calls({%{"type" => 0, "asd" => 123}, _}, acc, _trace_address, _inner?), do: acc
 
   defp parse_call_tracer_calls(
-         {%{"type" => type, "from" => from} = call, index},
+         {%{"type" => type, "from" => from, "asd" => 123} = call, index},
          acc,
          trace_address,
          inner?
